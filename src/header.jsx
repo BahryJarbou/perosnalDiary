@@ -11,6 +11,7 @@ const Header = () => {
             onClick={() => {
               localStorage.removeItem("entries");
               localStorage.removeItem("dates");
+              window.location.reload(true);
             }}
           >
             Clear All Entries
