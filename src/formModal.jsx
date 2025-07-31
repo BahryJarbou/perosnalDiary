@@ -3,7 +3,16 @@ const FormModal = ({ entries, setEntries }) => (
   <div className="justify-self-center">
     <button
       className="btn"
-      onClick={() => document.getElementById("my_modal_2").showModal()}
+      onClick={() => {
+        const dates = JSON.parse(localStorage.getItem("dates")) || [];
+        if (dates.includes(new Date().toISOString().split("T")[0])) {
+          alert(
+            "an entry for this day was already added, please come back tomorrow!"
+          );
+          return;
+        }
+        document.getElementById("my_modal_2").showModal();
+      }}
     >
       Add Entry
     </button>
