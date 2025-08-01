@@ -14,7 +14,7 @@ const Form = ({ entries, setEntries }) => {
   const handlerSubmit = (e) => {
     e.preventDefault();
     const dates = JSON.parse(localStorage.getItem("dates")) || [];
-    if (dates.includes(new Date().toISOString().split("T")[0])) {
+    if (dates.includes(entryData.date)) {
       alert(
         "an entry for this day was already added, please come back tomorrow!"
       );
@@ -67,7 +67,7 @@ const Form = ({ entries, setEntries }) => {
         type="date"
         id="date"
         min={new Date().toISOString().split("T")[0]}
-        max={new Date().toISOString().split("T")[0]}
+        // max={new Date().toISOString().split("T")[0]}
         name="date"
         placeholder="enter date"
         className="row-start-2 col-start-2 border-1 p-1 rounded"

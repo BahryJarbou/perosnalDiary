@@ -3,8 +3,7 @@ import DailyCard from "./dailyCard";
 import EntryModal from "./entryModal";
 import { useEffect, useState } from "react";
 
-const Month = () => {
-  const [entries, setEntries] = useState([]);
+const Month = ({ entries, setEntries }) => {
   const localEntries = JSON.parse(localStorage.getItem("entries")) || [];
   useEffect(() => {
     setEntries(JSON.parse(localStorage.getItem("entries")) || []);

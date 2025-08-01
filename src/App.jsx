@@ -1,14 +1,16 @@
-import { useState } from "react";
-import Year from "./year";
+import TimeLine from "./timeline";
 import Header from "./header";
 import Month from "./month";
 import "./index.css";
+import { useState } from "react";
 
 function App() {
+  const [entries, setEntries] = useState([]);
   return (
     <main>
       <Header />
-      <Month />
+      <Month entries={entries} setEntries={setEntries} />
+      <TimeLine />
     </main>
   );
 }

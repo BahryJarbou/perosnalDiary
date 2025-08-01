@@ -5,12 +5,12 @@ const FormModal = ({ entries, setEntries }) => (
       className="btn"
       onClick={() => {
         const dates = JSON.parse(localStorage.getItem("dates")) || [];
-        if (dates.includes(new Date().toISOString().split("T")[0])) {
-          alert(
-            "an entry for this day was already added, please come back tomorrow!"
-          );
-          return;
-        }
+        // if (dates.includes(new Date().toISOString().split("T")[0])) {
+        //   alert(
+        //     "an entry for this day was already added, please come back tomorrow!"
+        //   );
+        //   return;
+        // }
         document.getElementById("my_modal_2").showModal();
       }}
     >
